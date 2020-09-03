@@ -1,6 +1,12 @@
 $brand-main: red;
 $brand-secondary: green;
 
+// Creeaza trei variabile noi pentru culorile:
+// magenta, lightcoral si pink
+$brand-hover: magenta;
+$brand-visited: lightcoral;
+$brand-active: pink;
+
 // Pentru ancorele din lista neordonata elimina
 // linia si coloreaza-le rosii atunci cand
 // mouseul face hover pe ele folosind
@@ -70,5 +76,22 @@ ul {
       width: 100%;
       padding: 10px 20px;
     }
+  }
+}
+
+// Foloseste-le pentru starile ancorelor din
+// listele ordonate:
+//  a. hover: magenta
+//  b. active: pink
+//  c. visited: lightcoral
+ol {
+  a:hover {
+    color: $brand-hover;
+  }
+  a:active {
+    color: $brand-active;
+  }
+  a:visited {
+    color: $brand-visited;
   }
 }
