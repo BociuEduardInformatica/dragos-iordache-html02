@@ -1,0 +1,51 @@
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin shape($shape: "square") {
+  display: inline-block;
+  border: 1px solid #000;
+
+  @if $shape == "square" {
+  } @else if $shape == "circle" {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  } @else if $shape == "rhombus" {
+    transform: rotate(45deg) skew(10deg, 10deg);
+  }
+}
+
+@mixin btn-dir($direction: "left") {
+  width: 0;
+  height: 0;
+  content: "";
+
+  @if $direction == "left" {
+    border-top: 5px solid transparent;
+    border-right: 10px solid black;
+    border-bottom: 5px solid transparent;
+  }
+}
+
+.square {
+  @include shape("square");
+  @include size(10px, 10px);
+}
+
+.circle {
+  @include shape("circle");
+  @include size(10px, 10px);
+}
+
+.rhombus {
+  @include shape("rhombus");
+  @include size(10px, 10px);
+}
+
+.button-left {
+  &::before {
+    @include btn-dir("left");
+  }
+}

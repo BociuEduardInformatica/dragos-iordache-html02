@@ -9,3 +9,16 @@
   height: 150px;
   border: 1px solid #000;
 }
+
+@for $i from 1 to 11 {
+  $class-name: ".box";
+  @if $i < 10 {
+    $class-name: ".box-0#{$i}";
+  } @else {
+    $class-name: ".box-#{$i}";
+  }
+
+  #{$class-name} {
+    border-width: #{$i}px;
+  }
+}
